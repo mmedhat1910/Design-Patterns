@@ -1,4 +1,4 @@
-package Behavioral;
+package Behavioural;
 
 public class Decorator {
     

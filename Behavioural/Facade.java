@@ -1,4 +1,4 @@
-package Behavioral;
+package Behavioural;
 
 class Bedroom {
     public void turnLightsOn() {
