@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Adapter {
     public static void main(String[] args) {
         PC pc1 = new PC();
-        NewDellMonitor dellNew = new NewDellMonitor();
-        NewLenovoMonitor lenovoNew = new NewLenovoMonitor();
+        NewDellMonitor dellNew = new NewDellMonitor(); //  this can be declared as NewMonitor dellNew
+        NewLenovoMonitor lenovoNew = new NewLenovoMonitor(); // this can be declared as NewMonitor lenovoNew
         OldMonitor dellOld = new OldMonitor();
-        VGAAdapter vgaAdapter = new VGAAdapter(dellOld);
+        VGAAdapter vgaAdapter = new VGAAdapter(dellOld); // this can be declared as NewMonitor vgaAdapter
         pc1.connectMonitor(dellNew);
         pc1.connectMonitor(lenovoNew);
         pc1.connectMonitor(vgaAdapter);
