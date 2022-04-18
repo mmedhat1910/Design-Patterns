@@ -1,4 +1,4 @@
-package Behavioural;
+package Structural;
 
 class RegularMilk extends BeverageDecorator {
     public RegularMilk(Beverage toBeDecorated) {

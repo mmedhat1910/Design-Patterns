@@ -1,5 +1,5 @@
 
-package Structural;
+package Behavioural;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Structural;
+package Behavioural;
 
 // Client or Person
 public class CommandPattern {

@@ -1,4 +1,4 @@
-package Behavioural;
+package Structural;
 
 class Person {
     HomeFacade home;
