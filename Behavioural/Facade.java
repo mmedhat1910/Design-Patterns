@@ -1,5 +1,101 @@
 package Behavioural;
 
+class Person {
+    HomeFacade home;
+    public Person(HomeFacade home) {
+        this.home = home;
+    }
+    
+    public void wakeup() {
+        System.out.println("Waking up");
+    }
+    
+    public void brushTeeth() {
+        System.out.println("Brushing teeth");
+    }
+
+    public void putOnClothes() {
+        System.out.println("Putting on clothes");
+    }
+
+    public void takeOffClothes() {
+        System.out.println("Taking off clothes");
+    }
+
+
+    public void goToWork() {
+        this.wakeup();
+        home.takeShower();
+        this.brushTeeth();
+        home.haveBreakfast();
+        home.goToWork();
+    }
+
+    public void goHomeAndSleep() {
+        System.out.println("Getting ready to go back home");
+        // home.goToHome();
+        home.haveDinner();
+        home.takeShower();
+        this.brushTeeth();
+        // home.readyToSleep();
+        System.out.println("Currently sleeping");
+        System.out.println("--------------");
+    }
+}
+class HomeFacade {
+    Bedroom bedroom;
+    Microwave microwave;
+    Car car;
+    Bathroom bathroom;
+    CoffeeMachine coffeeMachine;
+
+    public HomeFacade(Bathroom bathroom, Bedroom bedroom, Microwave microwave, CoffeeMachine coffeeMachine, Car car) {
+        this.bathroom = bathroom;
+        this.bedroom = bedroom;
+        this.microwave = microwave;
+        this.car = car;
+        this.coffeeMachine = coffeeMachine;
+    }
+
+    public void takeShower() {
+        bathroom.showerOn();
+        bathroom.adjustShowerTemperature();
+        bathroom.showerOff();
+    }
+
+    public void haveBreakfast() {
+        coffeeMachine.putCoffeeBeans();
+        coffeeMachine.turnOn();
+        microwave.open();
+        microwave.putFood();
+        microwave.cookFood();
+        microwave.takeFood();
+    }
+
+    public void haveDinner() {
+        microwave.open();
+        microwave.putFood();
+        microwave.cookFood();
+        microwave.takeFood();
+    }
+
+    public void goToWork() {
+        car.openDoor();
+        car.startEngine();
+        car.driveToWork();
+    }
+
+}
+
+ class CoffeeMachine {
+    public void putCoffeeBeans() {
+        System.out.println("Beans in the coffee machine");
+    }
+
+    public void turnOn() {
+        System.out.println("Coffee brewing");
+    }
+}
 class Bedroom {
     public void turnLightsOn() {
         System.out.println("Bedroom lights are on");
@@ -26,16 +122,16 @@ class Bedroom {
         System.out.println("AC turned off");
     }
 }
-class Shower {
-    public void on() {
+class Bathroom {
+    public void showerOn() {
         System.out.println("Shower is on");
     }
 
-    public void off() {
+    public void showerOff() {
         System.out.println("Shower is off");
     }
 
-    public void adjustTemperature() {
+    public void adjustShowerTemperature() {
         System.out.println("Temperature Adjusted");
     }
 }
